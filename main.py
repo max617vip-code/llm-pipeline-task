@@ -22,7 +22,7 @@ def process_data():
         # значит CSV кривой, и никакой код не поможет!
         print(f"DEBUG: id={row['id']}, desc={row['description']}")
         
-        system_instruction = "Ты — экстрактор. Верни JSON с ключами: 'название', 'бренд', 'цена', 'категория', 'цвет', 'характеристика'."
+        system_instruction = "Нужно вернуть в файле output.json все данные, Например: Цвет: черный и т.д.'."
         prompt = f"Описание товара: {row['description']}"
 
         response = client.chat.completions.create(
